@@ -31,14 +31,9 @@ import good from '../assets/Corte/bueno.png'
 import regular from '../assets/Corte/regular.png'
 
 class ButtonFilter extends Component{
-    
 
-    state = {
-        form: '',
-        color: '',
-        clarity: '',
-        cut: ''
-    }
+    // stateChanger = this.props.stateChanger;
+    
 
     formbuttonLabels = {
         round: "REDONDO",
@@ -76,30 +71,6 @@ class ButtonFilter extends Component{
         regular: "REGULAR (POCO BIRLLANTE)"
     }
 
-    setStates = (event, label) => {
-        let name = event.target.getAttribute('label');
-        switch (this.props.title) {
-            case "FORMA":
-                this.setState({ form: name, color: this.state.color, clarity: this.state.clarity, cut: this.state.cut });
-                break;
-            case "COLOR":
-                this.setState({ color: name, form: this.state.form, clarity: this.state.clarity, cut: this.state.cut });
-                break;
-            case "CLARIDAD":
-                this.setState({ clarity: name, color: this.state.color, form: this.state.form, cut: this.state.cut });
-                break;
-            case "CORTE":
-                this.setState({ cut: name, color: this.state.color, clarity: this.state.clarity, form: this.state.form });
-                break;
-            default:
-                break;
-        }
-    }
-
-    printState = () => {
-        console.log(this.state);
-    }
-
     render() {
         switch (this.props.title) {
             case "FORMA":
@@ -107,23 +78,23 @@ class ButtonFilter extends Component{
                     <div className="table">
                         <div className="title">
                             <p>{this.props.title}</p>
-                            <span className="tooltip" onClick={this.printState}>?</span>
+                            <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={round} label={this.formbuttonLabels.round}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={princess} label={this.formbuttonLabels.princess}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={emerald} label={this.formbuttonLabels.emerald}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={oval} label={this.formbuttonLabels.oval}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={marquise} label={this.formbuttonLabels.marquise}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={pear} label={this.formbuttonLabels.pear}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={round} label={this.formbuttonLabels.round}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={princess} label={this.formbuttonLabels.princess}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={emerald} label={this.formbuttonLabels.emerald}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={oval} label={this.formbuttonLabels.oval}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={marquise} label={this.formbuttonLabels.marquise}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={pear} label={this.formbuttonLabels.pear}/>
                             </div>
                             <div className="row">
-                                <ButtonImg setStates={(event) => this.setStates(event)} parent={this.props.title} src={asscher} label={this.formbuttonLabels.asscher}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} parent={this.props.title} src={heart} label={this.formbuttonLabels.heart}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} parent={this.props.title} src={cushion} label={this.formbuttonLabels.cushion}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} parent={this.props.title} src={baguette} label={this.formbuttonLabels.baguette}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} parent={this.props.title} src={trillion} label={this.formbuttonLabels.trillion}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} parent={this.props.title} src={radiant} label={this.formbuttonLabels.radiant}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={asscher} label={this.formbuttonLabels.asscher}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={heart} label={this.formbuttonLabels.heart}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={cushion} label={this.formbuttonLabels.cushion}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={baguette} label={this.formbuttonLabels.baguette}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={trillion} label={this.formbuttonLabels.trillion}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={radiant} label={this.formbuttonLabels.radiant}/>
                             </div>
                     </div>
                 )
@@ -136,10 +107,10 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={transparent} label={this.colorbuttonLabels.transparent}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={barelyColorless} label={this.colorbuttonLabels.barelyColorless}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={lightYellow} label={this.colorbuttonLabels.lightYellow}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={yellow} label={this.colorbuttonLabels.yellow}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={transparent} label={this.colorbuttonLabels.transparent}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={barelyColorless} label={this.colorbuttonLabels.barelyColorless}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={lightYellow} label={this.colorbuttonLabels.lightYellow}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={yellow} label={this.colorbuttonLabels.yellow}/>
                             </div>
                     </div>
                 )
@@ -152,10 +123,10 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={perfect} label={this.claritybuttonLabels.perfect}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={nonVisibleFlaws} label={this.claritybuttonLabels.nonVisibleFlaws}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={tenXFlaws} label={this.claritybuttonLabels.tenXFlaws}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={visibleFlaws} label={this.claritybuttonLabels.visibleFlaws}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={perfect} label={this.claritybuttonLabels.perfect}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={nonVisibleFlaws} label={this.claritybuttonLabels.nonVisibleFlaws}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={tenXFlaws} label={this.claritybuttonLabels.tenXFlaws}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={visibleFlaws} label={this.claritybuttonLabels.visibleFlaws}/>
                             </div>
                     </div>
                 )
@@ -168,10 +139,10 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={excellent} label={this.cutbuttonLabels.excellent}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={veryGood} label={this.cutbuttonLabels.veryGood}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={good} label={this.cutbuttonLabels.good}/>
-                                <ButtonImg setStates={(event) => this.setStates(event)} src={regular} label={this.cutbuttonLabels.regular}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={excellent} label={this.cutbuttonLabels.excellent}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={veryGood} label={this.cutbuttonLabels.veryGood}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={good} label={this.cutbuttonLabels.good}/>
+                                <ButtonImg stateChanger={this.props.stateChanger} src={regular} label={this.cutbuttonLabels.regular}/>
                             </div>
                     </div>
                 )

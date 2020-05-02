@@ -12,7 +12,6 @@ class RangeFilter extends Component{
     };
 
     handleSlide = (newProgress) => this.setState({ progress: newProgress });
-    // handleSlide2 = (newProgress) => this.setState({ progress2: newProgress });
 
     handleChange1 = (event) => {
         let val = event.target.value;
@@ -22,6 +21,7 @@ class RangeFilter extends Component{
         let val = event.target.value;
         this.setState({ progress2: val });
     }
+    
 
     render(){
         return(
@@ -48,10 +48,10 @@ class RangeFilter extends Component{
                             onSlide={this.handleSlide}
                             roundedCorners
                         >
-                            <Progress height={15} color="#eeeeee" progress={parseInt(this.state.progress)}>
+                            <Progress height={15} color="#eeeeee" progress={parseInt(this.state.progress)} onChange={this.props.stateChanger({min: this.state.progress, max: this.state.progress2})}>
                                 <Dot color="#1724ab" style={{height: 15, width: 15}} />
                             </Progress>
-                            <Progress height={15} color="#1724ab" progress={parseInt(this.state.progress2)}>
+                            <Progress height={15} color="#1724ab" progress={parseInt(this.state.progress2)} onChange={this.props.stateChanger({min: this.state.progress, max: this.state.progress2})}>
                                 <Dot color="#1724ab" style={{height: 15, width: 15}} />
                             </Progress>
                         </MultiSlider>

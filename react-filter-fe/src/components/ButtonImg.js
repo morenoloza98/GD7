@@ -4,6 +4,7 @@ import '../css/ButtonImg.css'
 function ButtonImg(props){
     // useState, volver a enviar los atributos
     const [bgColor, setState] = useState('white');
+    // const stateChanger = props.stateChanger;
     
 
     let handleClick = () =>{
@@ -16,11 +17,12 @@ function ButtonImg(props){
 
     let handleStateChange = (event) => {
         let name = event.target.getAttribute('label');
-        props.setStates(event, name);
+        props.stateChanger(name);
+        handleClick();
     }
 
     return(
-        <div className="cell" onClick={handleClick} style={{backgroundColor: bgColor}}>
+        <div className="cell" label={props.label} onClick={handleStateChange} style={{backgroundColor: bgColor}}>
             <input type="image" label={props.label} alt={props.label} src={props.src} onClick={handleStateChange}/><br/>
             <span>{props.label}</span>
         </div>

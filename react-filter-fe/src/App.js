@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ButtonFilter from './components/ButtonFilter';
 import RangeFilter from './components/RangeFilter';
 import Button from './components/Button';
@@ -27,31 +27,77 @@ function App() {
     max: 5000000
   }
 
-  const handleClick = () => {
-    console.log("Print: ");
+  //Set of states
+  const [forma, setForma] = useState('not selected');
+  const [color, setColor] = useState('not selected');
+  const [clarity, setClarity] = useState('not selected');
+  const [cut, setCut] = useState('not selected');
+
+  const [carat, setCarat] = useState('not selected');
+  const [price, setPrice] = useState('not selected');
+
+  function changeForma(receivedForma){
+    setForma(receivedForma);
   }
 
-  let info;
-
-  const gatherInfo = (value) => {
-    info.push(value);
+  function changeColor(receivedColor){
+    setColor(receivedColor);
   }
+
+  function changeClarity(receivedClarity){
+    setClarity(receivedClarity);
+  }
+
+  function changeCut(receivedCut){
+    setCut(receivedCut);
+  }
+
+  function changeCarat(receivedCarat){
+    setCarat(receivedCarat);
+  }
+
+  function changePrice(receivedPrice){
+    setPrice(receivedPrice);
+  }
+
+  const handleSubmit = () => {
+    const filters = {
+      forma: forma,
+      color: color,
+      claridad: clarity,
+      corte: cut,
+      quilataje: carat,
+      precio: price
+    }
+    console.table(filters);
+  }
+
+  function wipeFilters() {
+    setForma('not selected');
+    setColor('not selected');
+    setClarity('not selected');
+    setCut('not selected');
+    setCarat('not selected');
+    setPrice('not selected');
+    console.log("Filters cleansed");
+  }
+
 
   return (
     <div className="main-container">
       <div className="left-filters">
-        <ButtonFilter title={filterNames.forma} gatherInfo={gatherInfo}></ButtonFilter>
-        <ButtonFilter title={filterNames.color} gatherInfo={gatherInfo}></ButtonFilter>
-        <ButtonFilter title={filterNames.claridad} gatherInfo={gatherInfo}></ButtonFilter>
+        <ButtonFilter stateChanger={changeForma} optionSelected={forma} title={filterNames.forma}></ButtonFilter>
+        <ButtonFilter stateChanger={changeColor} optionSelected={color} title={filterNames.color}></ButtonFilter>
+        <ButtonFilter stateChanger={changeClarity} optionSelected={clarity} title={filterNames.claridad}></ButtonFilter>
       </div>
       <div className="right-filters">
-        <ButtonFilter title={filterNames.corte} gatherInfo={gatherInfo}></ButtonFilter>
-        <RangeFilter title={filterNames.quilataje} gatherInfo={gatherInfo} value="none" onChange="none" from={rangeValues.min} to={rangeValues.max} imageFrom={imageFrom} imageTo={imageTo}/>
-        <RangeFilter title={filterNames.precio} gatherInfo={gatherInfo} value="none" onChange="none" from={priceRangeValues.min} to={priceRangeValues.max} imageFrom={null} imageTo={null}/>
+        <ButtonFilter stateChanger={changeCut} optionSelected={cut} title={filterNames.corte} ></ButtonFilter>
+        <RangeFilter stateChanger={changeCarat} optionSelected={carat} title={filterNames.quilataje} from={rangeValues.min} to={rangeValues.max} imageFrom={imageFrom} imageTo={imageTo}/>
+        <RangeFilter stateChanger={changePrice} optionSelected={price} title={filterNames.precio} from={priceRangeValues.min} to={priceRangeValues.max} imageFrom={null} imageTo={null}/>
       </div>
       <div className="buttons">
-        <Button label="BUSCAR" color="#1724ab" onClick={handleClick.bind(this)} fontColor="#ffffff"/> 
-        <Button label="LIMPIAR FILTROS" color="#ffffff" fontColor="#1724ab"/>
+        <Button label="BUSCAR" color="#1724ab" onClick={handleSubmit} fontColor="#ffffff"/> 
+        <Button label="LIMPIAR FILTROS" color="#ffffff" onClick={wipeFilters} fontColor="#1724ab"/>
       </div>
     </div>
   );
