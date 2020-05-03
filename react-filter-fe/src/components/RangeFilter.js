@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import MultiSlider, { Progress, Dot } from 'react-multi-bar-slider';
+import InputRange from 'react-input-range';
 import '../assets/Quilataje/pequeno.png'
 import '../assets/Quilataje/grande.png'
 import '../css/RangeFilter.css'
+import 'react-input-range/lib/css/index.css';
 
 class RangeFilter extends Component{
 
-    state = {
-        progress: this.props.from,
-        progress2: this.props.to,
-    };
-
-    handleSlide = (newProgress) => this.setState({ progress: newProgress });
+    constructor(props){
+        super(props);
+        this.state = {
+            rangeValue: {min: this.props.from, max: this.props.to}
+        };
+    }
 
     handleChange1 = (event) => {
         let val = event.target.value;
-        this.setState({ progress: val });
+        this.setState({ rangeValue:{ min:val, max: this.state.rangeValue.max }  });
     }
     handleChange = (event) => {
         let val = event.target.value;
-        this.setState({ progress2: val });
+        this.setState({ rangeValue:{ min:this.state.rangeValue.min, max: val } });
     }
     
 
@@ -39,28 +40,19 @@ class RangeFilter extends Component{
                                 <input type="image" alt="" src={this.props.imageTo} />
                             </div>
                         </div>
-                        <MultiSlider
-                            width={620}
-                            height={5}
-                            slidableZoneSize={20}
-                            equalColor="#1724ab"
-                            style={{ marginBottom: 30 }}
-                            onSlide={this.handleSlide}
-                            roundedCorners
-                        >
-                            <Progress height={15} color="#eeeeee" progress={parseInt(this.state.progress)} onChange={this.props.stateChanger({min: this.state.progress, max: this.state.progress2})}>
-                                <Dot color="#1724ab" style={{height: 15, width: 15}} />
-                            </Progress>
-                            <Progress height={15} color="#1724ab" progress={parseInt(this.state.progress2)} onChange={this.props.stateChanger({min: this.state.progress, max: this.state.progress2})}>
-                                <Dot color="#1724ab" style={{height: 15, width: 15}} />
-                            </Progress>
-                        </MultiSlider>
+                        <InputRange
+                            formatLabel={() => ""}
+                            maxValue={this.props.to}
+                            minValue={this.props.from}
+                            step={1}
+                            value={this.state.rangeValue}
+                            onChange={rangeValue => this.setState({ rangeValue }, this.props.stateChanger(rangeValue))}/>
                         <div className="inputs">
                             <div className="left-input">
-                                <input type="number" name="from" value={this.state.progress} onChange={this.handleChange1} className="input-number" />
+                                <input type="number" name="from" value={this.state.rangeValue.min} onChange={this.handleChange1} className="input-number" />
                             </div>
                             <div className="right-input">
-                                <input type="number" name="to" value={this.state.progress2} onChange={this.handleChange} className="input-number" />
+                                <input type="number" name="to" value={this.state.rangeValue.max} onChange={this.handleChange} className="input-number" />
                             </div>
                         </div>
                     </div>

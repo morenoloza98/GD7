@@ -93,7 +93,7 @@ function App() {
       <div className="right-filters">
         <ButtonFilter stateChanger={changeCut} optionSelected={cut} title={filterNames.corte} ></ButtonFilter>
         <RangeFilter stateChanger={changeCarat} optionSelected={carat} title={filterNames.quilataje} from={rangeValues.min} to={rangeValues.max} imageFrom={imageFrom} imageTo={imageTo}/>
-        <RangeFilter stateChanger={changePrice} optionSelected={price} title={filterNames.precio} from={priceRangeValues.min} to={priceRangeValues.max} imageFrom={null} imageTo={null}/>
+        <RangeFilter stateChanger={changePrice} optionSelected={price} title={filterNames.precio} from={priceRangeValues.min} to={priceRangeValues.max} append={"$"} imageFrom={null} imageTo={null}/>
       </div>
       <div className="buttons">
         <Button label="BUSCAR" color="#1724ab" onClick={handleSubmit} fontColor="#ffffff"/> 

@@ -81,20 +81,20 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg stateChanger={this.props.stateChanger} src={round} label={this.formbuttonLabels.round}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={princess} label={this.formbuttonLabels.princess}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={emerald} label={this.formbuttonLabels.emerald}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={oval} label={this.formbuttonLabels.oval}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={marquise} label={this.formbuttonLabels.marquise}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={pear} label={this.formbuttonLabels.pear}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={round} label={this.formbuttonLabels.round}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={princess} label={this.formbuttonLabels.princess}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={emerald} label={this.formbuttonLabels.emerald}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={oval} label={this.formbuttonLabels.oval}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={marquise} label={this.formbuttonLabels.marquise}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={pear} label={this.formbuttonLabels.pear}/>
                             </div>
                             <div className="row">
-                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={asscher} label={this.formbuttonLabels.asscher}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={heart} label={this.formbuttonLabels.heart}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={cushion} label={this.formbuttonLabels.cushion}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={baguette} label={this.formbuttonLabels.baguette}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={trillion} label={this.formbuttonLabels.trillion}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} parent={this.props.title} src={radiant} label={this.formbuttonLabels.radiant}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} parent={this.props.title} src={asscher} label={this.formbuttonLabels.asscher}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} parent={this.props.title} src={heart} label={this.formbuttonLabels.heart}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} parent={this.props.title} src={cushion} label={this.formbuttonLabels.cushion}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} parent={this.props.title} src={baguette} label={this.formbuttonLabels.baguette}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} parent={this.props.title} src={trillion} label={this.formbuttonLabels.trillion}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} parent={this.props.title} src={radiant} label={this.formbuttonLabels.radiant}/>
                             </div>
                     </div>
                 )
@@ -107,10 +107,10 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg stateChanger={this.props.stateChanger} src={transparent} label={this.colorbuttonLabels.transparent}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={barelyColorless} label={this.colorbuttonLabels.barelyColorless}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={lightYellow} label={this.colorbuttonLabels.lightYellow}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={yellow} label={this.colorbuttonLabels.yellow}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={transparent} label={this.colorbuttonLabels.transparent}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={barelyColorless} label={this.colorbuttonLabels.barelyColorless}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={lightYellow} label={this.colorbuttonLabels.lightYellow}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={yellow} label={this.colorbuttonLabels.yellow}/>
                             </div>
                     </div>
                 )
@@ -123,10 +123,10 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg stateChanger={this.props.stateChanger} src={perfect} label={this.claritybuttonLabels.perfect}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={nonVisibleFlaws} label={this.claritybuttonLabels.nonVisibleFlaws}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={tenXFlaws} label={this.claritybuttonLabels.tenXFlaws}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={visibleFlaws} label={this.claritybuttonLabels.visibleFlaws}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={perfect} label={this.claritybuttonLabels.perfect}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={nonVisibleFlaws} label={this.claritybuttonLabels.nonVisibleFlaws}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={tenXFlaws} label={this.claritybuttonLabels.tenXFlaws}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={visibleFlaws} label={this.claritybuttonLabels.visibleFlaws}/>
                             </div>
                     </div>
                 )
@@ -139,10 +139,10 @@ class ButtonFilter extends Component{
                             <span className="tooltip">?</span>
                         </div>
                             <div className="row">
-                                <ButtonImg stateChanger={this.props.stateChanger} src={excellent} label={this.cutbuttonLabels.excellent}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={veryGood} label={this.cutbuttonLabels.veryGood}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={good} label={this.cutbuttonLabels.good}/>
-                                <ButtonImg stateChanger={this.props.stateChanger} src={regular} label={this.cutbuttonLabels.regular}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={excellent} label={this.cutbuttonLabels.excellent}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={veryGood} label={this.cutbuttonLabels.veryGood}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={good} label={this.cutbuttonLabels.good}/>
+                                <ButtonImg optSelected={this.props.optionSelected} stateChanger={this.props.stateChanger} src={regular} label={this.cutbuttonLabels.regular}/>
                             </div>
                     </div>
                 )
