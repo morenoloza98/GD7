@@ -79,8 +79,17 @@ function App() {
     setCut('not selected');
     setCarat('not selected');
     setPrice('not selected');
-    console.log("Filters cleansed");
-  }
+    const filters = {
+      forma: forma,
+      color: color,
+      claridad: clarity,
+      corte: cut,
+      quilataje: carat,
+      precio: price
+    }
+    console.table(filters);
+  };
+
 
 
   return (

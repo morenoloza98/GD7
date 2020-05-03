@@ -19,7 +19,7 @@ function ButtonImg(props){
     let handleStateChange = (event) => {
         let name = event.target.getAttribute('label');
         props.stateChanger(name);
-        handleClick(name);
+        handleClick();
     }
 
     return(

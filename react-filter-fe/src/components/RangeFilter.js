@@ -15,14 +15,15 @@ class RangeFilter extends Component{
     }
 
     handleChange1 = (event) => {
-        let val = event.target.value;
+        let val = parseInt(event.target.value);
         this.setState({ rangeValue:{ min:val, max: this.state.rangeValue.max }  });
+        this.props.stateChanger(this.state.rangeValue);
     }
     handleChange = (event) => {
-        let val = event.target.value;
+        let val = parseInt(event.target.value);
         this.setState({ rangeValue:{ min:this.state.rangeValue.min, max: val } });
+        this.props.stateChanger(this.state.rangeValue);
     }
-    
 
     render(){
         return(
@@ -49,10 +50,10 @@ class RangeFilter extends Component{
                             onChange={rangeValue => this.setState({ rangeValue }, this.props.stateChanger(rangeValue))}/>
                         <div className="inputs">
                             <div className="left-input">
-                                <input type="number" name="from" value={this.state.rangeValue.min} onChange={this.handleChange1} className="input-number" />
+                                <input type="number" name="from" value={parseInt(this.state.rangeValue.min)} onChange={this.handleChange1} className="input-number" />
                             </div>
                             <div className="right-input">
-                                <input type="number" name="to" value={this.state.rangeValue.max} onChange={this.handleChange} className="input-number" />
+                                <input type="number" name="to" value={parseInt(this.state.rangeValue.max)} onChange={this.handleChange} className="input-number" />
                             </div>
                         </div>
                     </div>
